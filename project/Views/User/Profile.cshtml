@@ -1,0 +1,60 @@
+﻿ @model WebApplication6.Models.User
+
+<div class="container">
+    <div class="profile-container">
+        <img src="~/css/audi1.jpeg" alt="Profile Picture" class="profile-image">
+        <h2><center>Емил Стоянов</center></h2>
+        <p>Възраст: 20г.</p>
+        <p>Клас: няма</p>
+        <p>Любим цвят: синьо</p>
+        <hr>
+        <p>За мен</p>
+        <p>Aз съм Емил Стоянов на 20г. Завършил съм в училище ПГ по телекомуникации
+            и в момента съм преподавател по 
+            програмиране в същото училище. Преподавам на ученици от 10-12 клас.
+            Любимият ми клас е 12г.
+        </p>
+        <hr>
+        <h4>Може би познавате:</h4>
+        <ul>Iliqn Stoqnov</ul>
+        <ul>Stiliqn Hristov</ul>
+        <ul>Svetoslav Ivanov</ul>
+        <ul>Miro Nedyalkov</ul>
+        <ul>Konstantin Minchev</ul>
+    </div>
+</div>
+
+<style>
+    .profile-container {
+        text-align:center;
+        max-width: 400px;
+        margin: auto;
+        padding: 20px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background: white;
+    }
+    .profile-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+</style>
+@{
+}
+<h1>@ViewBag.Name @ViewBag.Lastname</h1>
+<h3>e-mail: @ViewBag.Email</h3>
+<br
+<h2>Update user</h2>
+<form asp-action ="Update" ontimeupdate=" method="post">
+    <input type="text" name="Name" value="@ViewBag.Name"/>
+    <input type="text" name="Lastname" value="@ViewBag.Lastname" />
+    <input type="email" name="Email" value="@ViewBag.Email" />
+    <button type="submit">Update</button>
+</form>
+<h2>Delete user</h2>
+<form asp-action="Delete" method="post">
+    <button type="submit" onclick="return confirm('Are you sure you want to delete this?');">Delete</button>
+</form>

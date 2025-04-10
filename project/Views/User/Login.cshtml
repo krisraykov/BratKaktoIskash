@@ -1,0 +1,27 @@
+﻿@model WebApplication6.Models.User
+@{
+    ViewBag.Title = "Login";
+}
+<h2>Login</h2>
+
+<form action="/User/Login" method="post">
+    @Html.AntiForgeryToken()
+    <br>
+    <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" required>
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+    <br>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="Password" required minlength="6">
+    </div>
+    <br>
+    <div>
+        <label for="remember_me">Remember me</label>
+        <input type="checkbox" id="remember_me" name="RememberMe">
+    </div>
+    <br>
+    <button type="submit">Login</button>
+</form>

@@ -1,0 +1,12 @@
+﻿@model WebApplication6.Models.Product
+
+<h2>Добави нов продукт</h2>
+
+<form method="post">
+    <p>Име: <input type="text" name="Name" required /></p>
+    <p>Описание: <input type="text" name="Description" required /></p>
+    <p>Цена: <input type="number" name="Price" step="0.01" required /></p>
+    <button type="submit">Запази</button>
+</form>
+
+<a href="/Products">Обратно към списъка</a>

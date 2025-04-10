@@ -1,0 +1,38 @@
+﻿@model WebApplication6.Models.User
+@{
+    ViewBag.Title = "Register";
+}
+<h2>Register</h2>
+
+<form action="/User/Register" method = "post">
+@Html.AntiForgeryToken()
+
+<div>
+    <label for="name">Name</label>
+    <input type ="text" id="name" name = "Name" required>
+</div>
+    <br>
+    <div>
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="LastName" required>
+    </div>
+<br>
+<div>
+        <label for="email">Email</label>
+        <input type="email" id = "email" name="Email" required>
+        @Html.ValidationMessageFor(n => n.Email)
+</div>
+    <br>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="Password" required minlength ="6">
+    </div>
+    <br>
+    <div>
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="ConfirmPassword" required minlength ="6">
+    </div>
+    <br>
+    <button type="submit">Register</button>
+</form>

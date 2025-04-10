@@ -1,0 +1,14 @@
+﻿@model Product
+
+<h2>Сигурни ли сте, че искате да изтриете този продукт?</h2>
+
+<p><strong>Име:</strong> @Model.Name</p>
+<p><strong>Описание:</strong> @Model.Description</p>
+<p><strong>Цена:</strong> @Model.Price лв.</p>
+
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Да, изтрий</button>
+    <a asp-action="Index" class="btn btn-secondary">Отказ</a>
+</form>
